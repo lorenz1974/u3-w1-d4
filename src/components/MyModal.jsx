@@ -1,9 +1,9 @@
 import { Modal, Button, Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CommentArea from './CommentArea'
+import CommentForm from './CommentForm'
 
 function MyModal(props) {
-  console.log('MyModal pops è:', props)
   return (
     <Modal
       {...props}
@@ -44,12 +44,14 @@ function MyModal(props) {
               {props.modalContent.price}
             </div>
           </Col>
+          <Col className='d-flex flex-column flex-grow-1'>
+            <CommentForm comments={props.modalContent.comments} />
 
-          {props.modalContent.comments > 0 && (
-            <Col className='d-flex flex-column flex-grow-1'>
-              <CommentArea comments={props.modalContent.comments} />
-            </Col>
-          )}
+            {props.modalContent.comments &&
+              props.modalContent.comments.length > 0 && (
+                <CommentArea comments={props.modalContent.comments} />
+              )}
+          </Col>
         </Row>
       </Modal.Body>
       <Modal.Footer>

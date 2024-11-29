@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CommentRate from './CommentRate'
 
 class CommentArea extends Component {
   render() {
@@ -22,13 +23,7 @@ class CommentArea extends Component {
                 </p>
                 <p>
                   <span className='fw-bold'>Rating:</span>
-                  {Array.from({ length: comment.rate }).map((_, i) => (
-                    <FontAwesomeIcon
-                      className='ms-1 text-warning fs-6'
-                      key={i}
-                      icon='fas fa-star'
-                    ></FontAwesomeIcon>
-                  ))}
+                  <CommentRate rating={comment.rate}></CommentRate>
                 </p>
               </li>
             )

@@ -7,7 +7,6 @@ class SingleBook extends React.Component {
     const { book, setModalShow, selectedBooks, setSelectedBooks, comments } =
       this.props
     const isSelected = selectedBooks.includes(book.asin)
-    comments.length > 0 && console.log()
 
     const bookRating =
       comments.length > 0
@@ -69,7 +68,7 @@ class SingleBook extends React.Component {
                   })
                 }}
               >
-                Dettagli
+                Commenti
               </Button>
             </Card.Footer>
           </Card.Body>
